@@ -1,13 +1,7 @@
 from flask import Flask, render_template, request 
 from newsapi import NewsApiClient 
-  
-# init flask app 
-app = Flask(__name__) 
-  
-# Init news api  
+app = Flask(__name__)   
 newsapi = NewsApiClient(api_key='987b9e8d37b640eb99c6f87b4cb45524') 
-  
-# helper function 
 def get_sources_and_domains(): 
     all_sources = newsapi.get_sources()['sources'] 
     sources = [] 
